@@ -1,0 +1,25 @@
+
+geography:
+  service:
+    name: "${SERVICE_NAME}"
+
+  providers:
+    country-state-city:
+      base-url: "${CSC_BASE_URL}"
+
+      headers:
+        api-key:
+          key: "X-CSCAPI-KEY"
+          value: "${CSC_API_KEY}"
+
+        accept:
+          key: "Accept"
+          value: "application/json"
+
+      endpoints:
+        countries: "/countries"
+        states: "/countries/{country_code}/states"
+        cities: "/countries/{country_code}/states/{state_code}/cities"
+
+      timeout: 10
+      retries: 0
