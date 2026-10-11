@@ -1,0 +1,17 @@
+geography:
+  providers:
+    country-state-city:
+      base-url: "https://api.example.com"
+      endpoints:
+        countries: "/countries"
+        states: "/states"
+        cities: "/cities"
+      timeout: 10
+      retries: 0
+      headers:
+        api-key:
+          key: "X-CSCAPI-KEY"
+          value: "test-secret-key"
+        accept:
+          key: "Accept"
+          value: "application/json"
