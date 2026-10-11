@@ -1,3 +1,4 @@
+import logging
 import os
 from pathlib import Path
 from fastapi import FastAPI
@@ -10,6 +11,13 @@ from ports.src.main.acl.adapters.country_state_city_adapter import CountryStateC
 from ports.src.main.acl.constants.constants import ConfigConstants
 from ports.src.main.api.constants.api_constants import ApiConstants
 from ports.src.main.api.routes.country_routes import CountryRoutes
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
+    force=True,
+)
 
 app = FastAPI(
     title="Geography Service",
